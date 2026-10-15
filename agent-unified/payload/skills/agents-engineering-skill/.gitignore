@@ -1,0 +1,6 @@
+.codegraph/
+.ruff_cache/
+.lycheecache
+node_modules/
+__pycache__/
+*.py[cod]

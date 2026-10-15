@@ -1,0 +1,257 @@
+{
+  "plugins": [
+    {
+      "selector": "sites@openai-bundled",
+      "sources": [
+        "linux",
+        "windows"
+      ],
+      "version_at_export": "0.1.66",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "visualize@openai-bundled",
+      "sources": [
+        "linux",
+        "windows"
+      ],
+      "version_at_export": "1.0.32",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "app-68e01e8c1c2081918b4567a0b959d3ff@openai-curated-remote",
+      "sources": [
+        "linux"
+      ],
+      "version_at_export": "2.0.0",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "deep-research-work@openai-curated-remote",
+      "sources": [
+        "linux"
+      ],
+      "version_at_export": "0.1.15",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "github@openai-curated-remote",
+      "sources": [
+        "linux"
+      ],
+      "version_at_export": "0.1.12-5f7cd798dc99",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "gmail@openai-curated-remote",
+      "sources": [
+        "linux"
+      ],
+      "version_at_export": "0.1.10",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "google-drive@openai-curated-remote",
+      "sources": [
+        "linux"
+      ],
+      "version_at_export": "0.1.16",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "openai-developers@openai-curated-remote",
+      "sources": [
+        "linux"
+      ],
+      "version_at_export": "1.2.3",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "openai-templates@openai-curated-remote",
+      "sources": [
+        "linux"
+      ],
+      "version_at_export": "0.1.1",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "plugin-management@openai-curated-remote",
+      "sources": [
+        "linux"
+      ],
+      "version_at_export": "0.1.0",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "zotero@openai-curated-remote",
+      "sources": [
+        "linux"
+      ],
+      "version_at_export": "0.1.2",
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "documents@openai-primary-runtime",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "spreadsheets@openai-primary-runtime",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "presentations@openai-primary-runtime",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "github@openai-curated",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "gmail@openai-curated",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "google-drive@openai-curated",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "chrome@openai-bundled",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "pdf@openai-primary-runtime",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "template-creator@openai-primary-runtime",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "browser@openai-bundled",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "computer-use@openai-bundled",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows"
+      ]
+    },
+    {
+      "selector": "codex-app-tools@openai-bundled",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    },
+    {
+      "selector": "unified-computer-use@openai-bundled",
+      "sources": [
+        "windows"
+      ],
+      "platforms": [
+        "windows",
+        "linux"
+      ]
+    }
+  ],
+  "note": "Plugin registration uses target Codex CLI; credentials and external account connections are not transferred."
+}

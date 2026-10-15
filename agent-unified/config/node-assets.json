@@ -1,0 +1,31 @@
+[
+  {
+    "id": "node-tools",
+    "platform": "all",
+    "kind": "tar.gz",
+    "path": "assets/common/node-tools.tar.gz",
+    "sha256": "ca2dceb3f7ccf5b07c4575b9e276b31ecb30d63f56e32f563ce6e85b928c7923",
+    "executables": {
+      "context7-mcp": "node_modules/@upstash/context7-mcp/dist/index.js",
+      "dbhub": "node_modules/@bytebase/dbhub/dist/index.js",
+      "pyright": "node_modules/pyright/index.js",
+      "pyright-langserver": "node_modules/pyright/langserver.index.js",
+      "defuddle": "node_modules/defuddle/dist/cli.js"
+    },
+    "source": "npm lockfile with registry integrity; installation scripts disabled",
+    "bytes": 31005409,
+    "oracle_mode": "Thin only; optional Thick native binaries excluded per upstream installation guide"
+  },
+  {
+    "id": "bruno",
+    "platform": "all",
+    "kind": "tar.gz",
+    "path": "assets/common/bruno.tar.gz",
+    "sha256": "c4c862b1c5597146366d663e39c4105a51ece461057a5599d39e0c3f0489e398",
+    "executables": {
+      "bru": "node_modules/@usebruno/cli/bin/bru.js"
+    },
+    "source": "npm lockfile with registry integrity; installation scripts disabled",
+    "bytes": 41583004
+  }
+]

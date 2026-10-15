@@ -1,0 +1,4 @@
+interface:
+  display_name: "AGENTS 工程系统"
+  short_description: "创建、审计或升级可验证的 AGENTS 工程工作流"
+  default_prompt: "Use $agents-engineering-skill to audit and improve this project's AGENTS.md engineering workflow."

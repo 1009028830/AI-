@@ -1,0 +1,15 @@
+{
+  "name": "fox-devtools-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@bytebase/dbhub": "1.5.0",
+    "@upstash/context7-mcp": "4.4.1",
+    "defuddle": "0.19.3",
+    "pyright": "1.1.414"
+  },
+  "overrides": {
+    "qs": "6.16.0",
+    "proxy-addr": "2.0.8"
+  }
+}

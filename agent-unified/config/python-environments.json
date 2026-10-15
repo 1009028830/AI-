@@ -1,0 +1,44 @@
+[
+  {
+    "name": "tools",
+    "platform": "windows-x86_64",
+    "requirements": "locks/python-windows-x86_64.txt",
+    "wheelhouse": "assets/wheelhouse/windows-x86_64/python",
+    "python_version": "3.13.13"
+  },
+  {
+    "name": "tools",
+    "platform": "linux-x86_64",
+    "requirements": "locks/python-linux-x86_64.txt",
+    "wheelhouse": "assets/wheelhouse/linux-x86_64/python",
+    "python_version": "3.13.13"
+  },
+  {
+    "name": "tools",
+    "platform": "linux-aarch64",
+    "requirements": "locks/python-linux-aarch64.txt",
+    "wheelhouse": "assets/wheelhouse/linux-aarch64/python",
+    "python_version": "3.13.13"
+  },
+  {
+    "name": "serena",
+    "platform": "windows-x86_64",
+    "requirements": "locks/serena-windows-x86_64.txt",
+    "wheelhouse": "assets/wheelhouse/windows-x86_64/serena",
+    "python_version": "3.13.13"
+  },
+  {
+    "name": "serena",
+    "platform": "linux-x86_64",
+    "requirements": "locks/serena-linux-x86_64.txt",
+    "wheelhouse": "assets/wheelhouse/linux-x86_64/serena",
+    "python_version": "3.13.13"
+  },
+  {
+    "name": "serena",
+    "platform": "linux-aarch64",
+    "requirements": "locks/serena-linux-aarch64.txt",
+    "wheelhouse": "assets/wheelhouse/linux-aarch64/serena",
+    "python_version": "3.13.13"
+  }
+]

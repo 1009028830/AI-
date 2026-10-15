@@ -1,0 +1,35 @@
+[
+  {
+    "id": "gdb",
+    "platform": "windows-x86_64",
+    "version": "17.2-1",
+    "path": "assets/native/gdb-17.2-windows-x86_64.zip",
+    "sha256": "e50e9c06946a4e0b5bb9482a6f8b17d5ad1b53ca0777b91277c247b78d3c70bb",
+    "kind": "zip",
+    "bytes": 31182629,
+    "executables": {
+      "gdb": "ucrt64/bin/gdb.exe",
+      "gdbserver": "ucrt64/bin/gdbserver.exe"
+    },
+    "extra_args": {
+      "gdb": [
+        "--data-directory",
+        "{install}/ucrt64/share/gdb"
+      ]
+    },
+    "source": "https://packages.msys2.org/packages/mingw-w64-ucrt-x86_64-gdb",
+    "repository": "https://repo.msys2.org/mingw/ucrt64/",
+    "repository_database_sha256": "a17d7cb14b5066756145c648d5604c0dc4c71135930cafb84d3fda5ecec4606d",
+    "package_count": 29,
+    "repacked": true,
+    "scope": "Windows原生UCRT64 GDB及嵌入Python运行依赖，不包含MSYS2服务或编译SDK",
+    "verification": {
+      "version": "GNU gdb (GDB) 17.2",
+      "batch_commands": true,
+      "embedded_python_imports": true,
+      "actual_target_debugged": false,
+      "source_file": "人工生成的fixture.gdb",
+      "stderr_review": "见打包内verification"
+    }
+  }
+]

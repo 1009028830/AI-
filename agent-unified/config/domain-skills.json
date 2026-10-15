@@ -1,0 +1,49 @@
+{
+  "skills": [
+    {
+      "name": "stm32-firmware",
+      "title": "STM32 固件开发与评审",
+      "purpose": "STM32 裸机/RTOS、HAL/LL、BSP、中断、DMA 与目标板验证",
+      "platform": "规则可跨平台；项目对应 SDK、交叉工具链和探针需分别验证",
+      "version": "1.0.0",
+      "date": "2026-10-15",
+      "origin": "本地编写；依据项目约束与官方资料"
+    },
+    {
+      "name": "esp-idf-firmware",
+      "title": "ESP-IDF 固件开发与评审",
+      "purpose": "ESP32 的 IDF 版本、组件、配置、任务、内存与构建诊断",
+      "platform": "Windows/Linux 对应 IDF 环境；芯片、端口、工具链分别核实",
+      "version": "1.0.0",
+      "date": "2026-10-15",
+      "origin": "本地编写；依据项目约束与官方资料"
+    },
+    {
+      "name": "linux-application-engineering",
+      "title": "Linux 应用开发与诊断",
+      "purpose": "Linux 用户态 C/C++、交叉编译、资源、并发、I/O 与部署验证",
+      "platform": "规则可跨平台阅读；构建与运行使用匹配的 Linux 目标环境",
+      "version": "1.0.0",
+      "date": "2026-10-15",
+      "origin": "本地编写；依据项目约束与官方资料"
+    },
+    {
+      "name": "linux-driver-kernel",
+      "title": "Linux 驱动与内核开发",
+      "purpose": "内核驱动、设备树、锁、DMA、UAPI 与子系统验证",
+      "platform": "匹配内核/BSP、配置、工具链及受控 Linux 测试目标",
+      "version": "1.0.0",
+      "date": "2026-10-15",
+      "origin": "本地编写；依据项目约束与官方资料"
+    },
+    {
+      "name": "hardware-software-validation",
+      "title": "软硬件联调与验收",
+      "purpose": "CAN/UDS、串口、Modbus 的协议核对、受控动作与验收记录",
+      "platform": "Windows/Linux 后端分别验证；设备动作须符合既有授权与安全条件",
+      "version": "1.0.0",
+      "date": "2026-10-15",
+      "origin": "本地编写；依据项目约束与官方资料"
+    }
+  ]
+}

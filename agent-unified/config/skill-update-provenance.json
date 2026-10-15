@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-15",
+  "upstream": [
+    {
+      "name": "webapp-testing",
+      "repository": "https://github.com/anthropics/skills",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "path": "skills/webapp-testing",
+      "upstream_skill_sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+    },
+    {
+      "name": "mcp-builder",
+      "repository": "https://github.com/anthropics/skills",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "path": "skills/mcp-builder",
+      "upstream_skill_sha256": "0f4592dcb53cf2b5d6b7febee6b4152018b565551a1c29e3c612f57b218ab295"
+    },
+    {
+      "name": "vercel-react-best-practices",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "path": "skills/react-best-practices",
+      "upstream_skill_sha256": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355"
+    },
+    {
+      "name": "vercel-composition-patterns",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "path": "skills/composition-patterns",
+      "upstream_skill_sha256": "e38e0eaa609316b10423a9a138ed95e35099accd3f735585295c8a8f165c28a3"
+    }
+  ],
+  "local_adaptations": [
+    "architecture-review: 客户端无关、移除缺失技能依赖",
+    "webapp-testing: 跨平台路径与等待条件、明确辅助脚本限制",
+    "mcp-builder: 文档工具与可选评估依赖说明",
+    "tech-writer: 去除当前验证器不支持的 argument-hint 展示字段"
+  ],
+  "local_snapshot": [
+    "tech-writer"
+  ]
+}

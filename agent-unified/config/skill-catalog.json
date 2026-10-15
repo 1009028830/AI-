@@ -1,0 +1,170 @@
+[
+  {
+    "name": "adr-skill",
+    "purpose": "记录架构决策、备选方案与取舍依据",
+    "snapshot": "SHA256 98d3ebb3d829",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "agents-engineering-skill",
+    "purpose": "建立和审计 AGENTS 工程规则、流程和项目模板",
+    "snapshot": "SHA256 f35ae14ce797",
+    "distribution": "bundled",
+    "source": "本仓库维护的内容；适用仓库 MIT 许可证"
+  },
+  {
+    "name": "architecture-review",
+    "purpose": "评审模块边界、依赖、耦合和 SOLID 原则",
+    "snapshot": "SHA256 9895af7fa93a",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "baoyu-infographic",
+    "purpose": "生成信息图与高密度视觉摘要",
+    "snapshot": "技能 1.117.4；SHA256 1572aaa294c5",
+    "distribution": "reference-only",
+    "source": "https://github.com/JimLiu/baoyu-skills"
+  },
+  {
+    "name": "c4-codebase-architecture",
+    "purpose": "从源码梳理系统、容器和组件的 C4 架构",
+    "snapshot": "SHA256 69c37c26f2e5",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "defuddle",
+    "purpose": "提取网页正文，转换为便于阅读的 Markdown",
+    "snapshot": "SHA256 10673a4dc70a",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "engineering-toolbox",
+    "purpose": "调用静态分析、符号查询、绘图、接口及设备协议工具",
+    "snapshot": "SHA256 4dfe991d0a7e",
+    "distribution": "bundled",
+    "source": "本仓库维护的内容；适用仓库 MIT 许可证"
+  },
+  {
+    "name": "esp-idf-firmware",
+    "purpose": "ESP32 的 IDF 版本、组件、配置、任务、内存与构建诊断",
+    "snapshot": "技能 1.0.0；SHA256 65202ed2ab6a",
+    "distribution": "bundled",
+    "source": "本仓库维护的内容；适用仓库 MIT 许可证"
+  },
+  {
+    "name": "hardware-software-validation",
+    "purpose": "CAN/UDS、串口、Modbus 的协议核对、受控动作与验收记录",
+    "snapshot": "技能 1.0.0；SHA256 a147ecfe90df",
+    "distribution": "bundled",
+    "source": "本仓库维护的内容；适用仓库 MIT 许可证"
+  },
+  {
+    "name": "json-canvas",
+    "purpose": "创建和编辑 Obsidian Canvas 图谱",
+    "snapshot": "SHA256 97d1ae072895",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "linux-application-engineering",
+    "purpose": "Linux 用户态 C/C++、交叉编译、资源、并发、I/O 与部署验证",
+    "snapshot": "技能 1.0.0；SHA256 6feff5671031",
+    "distribution": "bundled",
+    "source": "本仓库维护的内容；适用仓库 MIT 许可证"
+  },
+  {
+    "name": "linux-driver-kernel",
+    "purpose": "内核驱动、设备树、锁、DMA、UAPI 与子系统验证",
+    "snapshot": "技能 1.0.0；SHA256 c0991d593763",
+    "distribution": "bundled",
+    "source": "本仓库维护的内容；适用仓库 MIT 许可证"
+  },
+  {
+    "name": "mcp-builder",
+    "purpose": "开发和评估 MCP 服务",
+    "snapshot": "commit dbd4588f9e10；本地 SHA 96bc514ed313",
+    "distribution": "reference-only",
+    "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/mcp-builder"
+  },
+  {
+    "name": "obsidian-bases",
+    "purpose": "创建和维护 Obsidian 数据库视图",
+    "snapshot": "SHA256 c0037f20926c",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "obsidian-cli",
+    "purpose": "通过 CLI 操作 Obsidian 笔记及调试插件",
+    "snapshot": "SHA256 b54257cdc0e5",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "obsidian-markdown",
+    "purpose": "维护 Obsidian 专用 Markdown 语法与笔记",
+    "snapshot": "SHA256 7ad72e1f0a90",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "pcd-trajectory-map",
+    "purpose": "检查轨迹与 PCD 地图的对齐、距离和越界情况",
+    "snapshot": "SHA256 162b1b6f0ba1",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "resume-optimizer",
+    "purpose": "审计与优化简历内容、成果表达和岗位匹配",
+    "snapshot": "SHA256 8b995cdcdc5d",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "stm32-firmware",
+    "purpose": "STM32 裸机/RTOS、HAL/LL、BSP、中断、DMA 与目标板验证",
+    "snapshot": "技能 1.0.0；SHA256 cf370328646f",
+    "distribution": "bundled",
+    "source": "本仓库维护的内容；适用仓库 MIT 许可证"
+  },
+  {
+    "name": "tailored-resume-generator",
+    "purpose": "根据职位描述生成有针对性的简历",
+    "snapshot": "SHA256 7a64d9aa79a2",
+    "distribution": "reference-only",
+    "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "tech-writer",
+    "purpose": "审阅和改善技术文档的结构、表达与可读性",
+    "snapshot": "SHA256 1dcc7e928778",
+    "distribution": "reference-only",
+    "source": "https://github.com/cherczeg/tech_writer"
+  },
+  {
+    "name": "vercel-composition-patterns",
+    "purpose": "设计 React 组件组合及可扩展接口",
+    "snapshot": "commit 063bee94c3f4；本地 SHA e38e0eaa6093",
+    "distribution": "reference-only",
+    "source": "https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/composition-patterns"
+  },
+  {
+    "name": "vercel-react-best-practices",
+    "purpose": "检查 React / Next.js 性能和代码模式",
+    "snapshot": "commit 063bee94c3f4；本地 SHA 71ed7794962f",
+    "distribution": "reference-only",
+    "source": "https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices"
+  },
+  {
+    "name": "webapp-testing",
+    "purpose": "使用 Playwright 测试本地 Web 应用",
+    "snapshot": "commit dbd4588f9e10；本地 SHA 5ed0bc659ee8",
+    "distribution": "reference-only",
+    "source": "https://github.com/anthropics/skills/tree/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/webapp-testing"
+  }
+]

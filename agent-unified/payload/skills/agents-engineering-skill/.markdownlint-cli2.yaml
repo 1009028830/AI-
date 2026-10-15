@@ -1,0 +1,11 @@
+config:
+  # Prose, URLs, and rendered templates are clearer without hard wrapping.
+  line-length: false
+  # Templates intentionally embed reusable H1 headings and numbered procedures.
+  single-title: false
+  ol-prefix: false
+  # Compact and aligned CommonMark tables are both accepted.
+  table-column-style: false
+
+ignores:
+  - "node_modules/**"

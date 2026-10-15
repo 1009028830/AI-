@@ -1,0 +1,9 @@
+{
+  "name": "agents-engineering-quality-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Locked JavaScript quality tools for AGENTS engineering CI.",
+  "devDependencies": {
+    "markdownlint-cli2": "0.23.2"
+  }
+}

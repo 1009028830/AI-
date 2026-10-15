@@ -1,0 +1,23 @@
+{
+  "skill_name": "agents-engineering-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "为一个新的 Qt/C++ CAN 上位机项目建立 AGENTS.md 工程工作流。需要严格方案审核、硬件验证边界和中文交付说明。",
+      "expected_output": "初始化模板，写入真实项目定位和命令；将硬件实测与本地验证分开；保留严格审批和问题记忆。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "审计这个已有 monorepo 的 AGENTS.md。它有 600 多行，多个包测试命令不同，还有未提交改动。先只给差距报告，不要改文件。",
+      "expected_output": "保持只读；识别未提交改动；建议短根地图、按包嵌套规则和精确命令；不给出虚构验证。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "升级现有 AGENTS/skills 系统，保留团队约束，增加 Definition of Done 和自动校验，但不要覆盖已有技能。",
+      "expected_output": "先盘点并渐进修改；复用现有技能；新增单一 DoD 来源和验证脚本；展示验证结果与未解决警告。",
+      "files": []
+    }
+  ]
+}

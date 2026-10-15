@@ -1,0 +1,239 @@
+[
+  {
+    "id": "plantuml",
+    "platform": "all",
+    "version": "1.2026.8",
+    "kind": "file",
+    "executables": {},
+    "url": "https://github.com/plantuml/plantuml/releases/download/v1.2026.8/plantuml.jar",
+    "sha256": "5e1ecfa8ecd32c90b03bbf3b1eb6f020943f98ab0fcf4032be31a0002ee2c462",
+    "path": "assets/native/plantuml-1.2026.8.jar",
+    "bytes": 29871497
+  },
+  {
+    "id": "java",
+    "platform": "linux-aarch64",
+    "version": "21.0.12.1+1",
+    "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jre_aarch64_linux_hotspot_21.0.12.1_1.tar.gz",
+    "sha256": "14be1f35ebdbd1f6e8d57eb911a3ffb74d6d9aa255abc5daf2b1302002cf2cf2",
+    "kind": "tar.gz",
+    "executables": {
+      "java": "jdk-21.0.12.1+1-jre/bin/java"
+    },
+    "path": "assets/native/OpenJDK21U-jre_aarch64_linux_hotspot_21.0.12.1_1.tar.gz",
+    "bytes": 51149460
+  },
+  {
+    "id": "pandoc",
+    "platform": "linux-aarch64",
+    "version": "3.11",
+    "url": "https://github.com/jgm/pandoc/releases/download/3.11/pandoc-3.11-linux-arm64.tar.gz",
+    "sha256": "56ed5566ec41d22ec9ee0704e6ac0b98ba102e92384efd5306173a22d314c79a",
+    "kind": "tar.gz",
+    "executables": {
+      "pandoc": "pandoc-3.11/bin/pandoc"
+    },
+    "path": "assets/native/pandoc-3.11-linux-arm64.tar.gz",
+    "bytes": 37408185
+  },
+  {
+    "id": "java",
+    "platform": "linux-x86_64",
+    "version": "21.0.12.1+1",
+    "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jre_x64_linux_hotspot_21.0.12.1_1.tar.gz",
+    "sha256": "2413149700df0f7d440500a84a8f764c535f21e5a5e87d38328b64eec2c5b500",
+    "kind": "tar.gz",
+    "executables": {
+      "java": "jdk-21.0.12.1+1-jre/bin/java"
+    },
+    "path": "assets/native/OpenJDK21U-jre_x64_linux_hotspot_21.0.12.1_1.tar.gz",
+    "bytes": 52059408
+  },
+  {
+    "id": "pandoc",
+    "platform": "linux-x86_64",
+    "version": "3.11",
+    "url": "https://github.com/jgm/pandoc/releases/download/3.11/pandoc-3.11-linux-amd64.tar.gz",
+    "sha256": "37edb3bbcf722f921a009941bf5874e2e0c09263226c9b4a2d980788cb062ab6",
+    "kind": "tar.gz",
+    "executables": {
+      "pandoc": "pandoc-3.11/bin/pandoc"
+    },
+    "path": "assets/native/pandoc-3.11-linux-amd64.tar.gz",
+    "bytes": 34940580
+  },
+  {
+    "id": "clangd",
+    "platform": "windows-x86_64",
+    "version": "22.1.6",
+    "kind": "zip",
+    "executables": {
+      "clangd": "bin/clangd.exe"
+    },
+    "source": "https://github.com/clangd/clangd/releases/download/22.1.6/clangd-windows-22.1.6.zip",
+    "original_sha256": "ce54f16e0b4fd76d450eeda9664420b195360b73febcfe40e661108fa57f2ce1",
+    "sha256": "89bf012bca88f6e81fb67af4a01bbf361d0f792848d1f9dae7d169948a6b708c",
+    "repacked": true,
+    "files": 330,
+    "path": "assets/native/clangd-22.1.6-windows-x86_64.zip",
+    "bytes": 29004584
+  },
+  {
+    "id": "cmake",
+    "platform": "windows-x86_64",
+    "version": "4.4.3",
+    "url": "https://github.com/Kitware/CMake/releases/download/v4.4.3/cmake-4.4.3-windows-x86_64.zip",
+    "sha256": "4d52ebab7193a698651639ed80d8d04fd903358843572cf44c7fd234cb7c26ab",
+    "kind": "zip",
+    "executables": {
+      "cmake": "cmake-4.4.3-windows-x86_64/bin/cmake.exe",
+      "ctest": "cmake-4.4.3-windows-x86_64/bin/ctest.exe",
+      "cpack": "cmake-4.4.3-windows-x86_64/bin/cpack.exe"
+    },
+    "path": "assets/native/cmake-4.4.3-windows-x86_64.zip",
+    "bytes": 54408599
+  },
+  {
+    "id": "cppcheck",
+    "platform": "windows-x86_64",
+    "version": "2.21.0",
+    "kind": "zip",
+    "executables": {
+      "cppcheck": "cppcheck.exe",
+      "cppcheckgui": "cppcheckgui.exe"
+    },
+    "source": "https://github.com/cppcheck-opensource/cppcheck/releases/download/2.21.0/cppcheck-2.21.0-x64-Setup.msi",
+    "original_sha256": "a86eef1180dc18fde46b08f4e4b12f2a1ead8cfc0dd6c294aac8757748cbbb24",
+    "sha256": "adbc05e04b8f1784496f336d7c862e42c32c298df0fff1a5a9987561e4469709",
+    "repacked": true,
+    "files": 118,
+    "path": "assets/native/cppcheck-2.21.0-windows-x86_64.zip",
+    "bytes": 21374683
+  },
+  {
+    "id": "java",
+    "platform": "windows-x86_64",
+    "version": "21.0.12.1+1",
+    "kind": "zip",
+    "executables": {
+      "java": "bin/java.exe"
+    },
+    "source": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jre_x64_windows_hotspot_21.0.12.1_1.zip",
+    "original_sha256": "d35f31e712f0fcf6ac5a093edc90204fbff22f720ba3950bd09d331d5e621636",
+    "sha256": "7d6e4c3a77c1f73c31f0acb695602f6d925d01caee399d049145d3b434b069fc",
+    "repacked": true,
+    "files": 315,
+    "path": "assets/native/java-21.0.12.1-windows-x86_64.zip",
+    "bytes": 48830828
+  },
+  {
+    "id": "llvm-tools",
+    "platform": "windows-x86_64",
+    "version": "23.1.1",
+    "kind": "zip",
+    "executables": {
+      "clang-tidy": "bin/clang-tidy.exe",
+      "clang-format": "bin/clang-format.exe",
+      "clang-apply-replacements": "bin/clang-apply-replacements.exe"
+    },
+    "source": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/clang%2Bllvm-23.1.1-x86_64-pc-windows-msvc.tar.zst",
+    "original_sha256": "c8a12d754b5050c5668b56a5425c806792d46c70f7244b1216046164aa4b6462",
+    "scope": "clang-tidy、clang-format、clang-apply-replacements及Clang内建头文件；不是完整 Windows 编译 SDK，不包含LLDB",
+    "sha256": "a17ef70e9c5bbab5931abf6dc0111fa1f733b5a834597655112b3471cc42273a",
+    "repacked": true,
+    "files": 326,
+    "path": "assets/native/llvm-tools-23.1.1-windows-x86_64.zip",
+    "bytes": 27539920
+  },
+  {
+    "id": "ninja",
+    "platform": "windows-x86_64",
+    "version": "1.13.2",
+    "url": "https://github.com/ninja-build/ninja/releases/download/v1.13.2/ninja-win.zip",
+    "sha256": "07fc8261b42b20e71d1720b39068c2e14ffcee6396b76fb7a795fb460b78dc65",
+    "kind": "zip",
+    "executables": {
+      "ninja": "ninja.exe"
+    },
+    "path": "assets/native/ninja-win-1.13.2.zip",
+    "bytes": 291570
+  },
+  {
+    "id": "ninja-license",
+    "platform": "windows-x86_64",
+    "version": "1.13.2",
+    "url": "https://raw.githubusercontent.com/ninja-build/ninja/v1.13.2/COPYING",
+    "sha256": "eb7e9ab9690124c5c9f42bdc81383d886a3dede26345b6ed15bbad7caf81f7ea",
+    "kind": "file",
+    "executables": {},
+    "path": "assets/native/ninja-1.13.2-COPYING.txt",
+    "bytes": 11358
+  },
+  {
+    "id": "pandoc",
+    "platform": "windows-x86_64",
+    "version": "3.11",
+    "kind": "zip",
+    "executables": {
+      "pandoc": "pandoc-3.11/pandoc.exe"
+    },
+    "url": "https://github.com/jgm/pandoc/releases/download/3.11/pandoc-3.11-windows-x86_64.zip",
+    "sha256": "2ab72baf2399450e148ddf7a2a8689806c42e1bba71862b57e220fd9b8456d3d",
+    "path": "assets/native/pandoc-3.11-windows-x86_64.zip",
+    "bytes": 41761100
+  },
+  {
+    "id": "wireshark",
+    "platform": "windows-x86_64",
+    "version": "4.6.8",
+    "kind": "zip",
+    "executables": {
+      "wireshark": "App/Wireshark/Wireshark.exe",
+      "tshark": "App/Wireshark/tshark.exe"
+    },
+    "source": "https://2.na.dl.wireshark.org/win64/WiresharkPortable64_4.6.8.paf.exe",
+    "original_sha256": "d6cf5056586a0156c8634a9d9b3097e60a8dda408b889c9afc4445ec2b18d581",
+    "requires_ascii_path": true,
+    "excluded": [
+      "Data"
+    ],
+    "sha256": "8bc2a65ab136abccc10e0d80001f8f75e1a99ceb05ffb2998b68782cccd8fec2",
+    "repacked": true,
+    "files": 1387,
+    "path": "assets/native/wireshark-4.6.8-windows-x86_64.zip",
+    "bytes": 146597267
+  },
+  {
+    "id": "gdb",
+    "platform": "windows-x86_64",
+    "version": "17.2-1",
+    "path": "assets/native/gdb-17.2-windows-x86_64.zip",
+    "sha256": "e50e9c06946a4e0b5bb9482a6f8b17d5ad1b53ca0777b91277c247b78d3c70bb",
+    "kind": "zip",
+    "bytes": 31182629,
+    "executables": {
+      "gdb": "ucrt64/bin/gdb.exe",
+      "gdbserver": "ucrt64/bin/gdbserver.exe"
+    },
+    "extra_args": {
+      "gdb": [
+        "--data-directory",
+        "{install}/ucrt64/share/gdb"
+      ]
+    },
+    "source": "https://packages.msys2.org/packages/mingw-w64-ucrt-x86_64-gdb",
+    "repository": "https://repo.msys2.org/mingw/ucrt64/",
+    "repository_database_sha256": "a17d7cb14b5066756145c648d5604c0dc4c71135930cafb84d3fda5ecec4606d",
+    "package_count": 29,
+    "repacked": true,
+    "scope": "Windows原生UCRT64 GDB及嵌入Python运行依赖，不包含MSYS2服务或编译SDK",
+    "verification": {
+      "version": "GNU gdb (GDB) 17.2",
+      "batch_commands": true,
+      "embedded_python_imports": true,
+      "actual_target_debugged": false,
+      "source_file": "人工生成的fixture.gdb",
+      "stderr_review": "见打包内verification"
+    }
+  }
+]
