@@ -246,7 +246,8 @@ class TransactionTests(TemporaryCase):
         def change_during_check(path):
             nonlocal changed
             result = original_sha256(path)
-            if Path(path) == last_backup and not changed:
+            # Windows CI 的临时目录可能采用 8.3 短路径；回退器已解析为长路径。
+            if Path(path).resolve() == last_backup.resolve() and not changed:
                 changed = True
                 first.write_bytes(b'concurrent')
             return result
@@ -254,6 +255,7 @@ class TransactionTests(TemporaryCase):
         with mock.patch.object(common, 'sha256', side_effect=change_during_check):
             with self.assertRaises(RuntimeError):
                 common.rollback(transaction.directory)
+        self.assertTrue(changed, '必须实际注入并发修改，不能只验证正常回退')
         self.assertEqual(first.read_bytes(), b'concurrent')
 
     def test_bad_backup_blocks_all_rollback(self):
