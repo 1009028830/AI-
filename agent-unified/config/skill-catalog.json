@@ -21,6 +21,13 @@
     "source": "本地来源记录；未确认可再分发许可"
   },
   {
+    "name": "automotive-embedded-engineering",
+    "purpose": "ECU、AUTOSAR、车载网络、UDS、安全升级与工程证据",
+    "snapshot": "技能 1.0.0；SHA256 0bb2e66eb765",
+    "distribution": "bundled",
+    "source": "本仓库原创规则；MIT 不改变所引用标准与厂商资料许可"
+  },
+  {
     "name": "baoyu-infographic",
     "purpose": "生成信息图与高密度视觉摘要",
     "snapshot": "技能 1.117.4；SHA256 1572aaa294c5",
@@ -28,11 +35,25 @@
     "source": "https://github.com/JimLiu/baoyu-skills"
   },
   {
+    "name": "battery-bms-engineering",
+    "purpose": "动力/储能电池采样、估算、均衡、热管理、保护与验证",
+    "snapshot": "技能 1.0.0；SHA256 500cf7f7f49d",
+    "distribution": "bundled",
+    "source": "本仓库原创规则；MIT 不改变所引用标准与厂商资料许可"
+  },
+  {
     "name": "c4-codebase-architecture",
     "purpose": "从源码梳理系统、容器和组件的 C4 架构",
     "snapshot": "SHA256 69c37c26f2e5",
     "distribution": "reference-only",
     "source": "本地来源记录；未确认可再分发许可"
+  },
+  {
+    "name": "component-reuse",
+    "purpose": "旧代码提取、上游组件选型及跨项目接入验证",
+    "snapshot": "技能 1.0.0；SHA256 64e345f65221",
+    "distribution": "bundled",
+    "source": "本仓库维护的内容；适用仓库 MIT 许可证"
   },
   {
     "name": "defuddle",

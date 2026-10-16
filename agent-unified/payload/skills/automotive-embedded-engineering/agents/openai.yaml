@@ -1,0 +1,4 @@
+interface:
+  display_name: "车载嵌入式工程"
+  short_description: "车载 ECU、通信诊断、功能安全与升级的开发和评审"
+  default_prompt: "使用 $automotive-embedded-engineering，根据当前 ECU 项目的硬件、协议和标准基线实施或评审，并给出可追溯验证证据。"

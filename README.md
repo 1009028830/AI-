@@ -8,11 +8,12 @@
 - [跨平台规则与技能安装](agent-unified/README.md)：仅需 Python 3.11+，默认预览，确认后执行。
 - [技能与 MCP 目录](agent-unified/docs/技能目录.md)：区分公开内置、第三方来源和客户端管理能力。
 - [嵌入式规范索引](agent-unified/docs/嵌入式编程规范索引.md)：STM32、ESP32、Linux 应用、驱动及内核。
+- [车载与新能源电池规则](agent-unified/docs/车载嵌入式与新能源电池规则索引.md)：ECU、车载通信、功能安全、BMS 与储能，含 72 条检查项和 38 项官方来源。
 - [公开版 Excel 维护清单](agent-unified/docs/技能与MCP维护清单-公开版.xlsx)：可筛选、维护版本和记录更新。
 - [原项目模板](demo/)与既有根规范保留，按项目需要采用。
 
-公开版内置 **7 项技能**：AGENTS 工程体系、工程工具箱，以及 STM32、ESP-IDF、
-Linux 应用、Linux 驱动/内核、软硬件联调五项专项技能。
+公开版内置 **10 项技能**：AGENTS 工程体系、工程工具箱、组件提取与复用，以及 STM32、ESP-IDF、
+Linux 应用、Linux 驱动/内核、软硬件联调、车载嵌入式、新能源电池与 BMS 七项专项技能。
 个人环境中的其他技能仅登记来源；并非全部可以用本仓库许可证重新分发。
 
 ```bash
@@ -33,3 +34,5 @@ Git 仓库不包含登录凭据、个人账号配置、业务项目快照、虚�
 
 技能结构检查、模拟测试和构建成功不等于目标硬件验收。公开版本的测试范围见
 [发布验证说明](agent-unified/docs/公开发布说明.md)。
+
+组件复用入口：[GitHub 可复用代码候选](agent-unified/payload/skills/component-reuse/references/github-candidates.md)（2026-10-16，15 项，未批量安装）。Excel 已于 2026-10-16 补入组件复用、车载和 BMS 技能；其他记录保留各自核对日期。

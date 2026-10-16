@@ -44,6 +44,33 @@
       "version": "1.0.0",
       "date": "2026-10-15",
       "origin": "本地编写；依据项目约束与官方资料"
+    },
+    {
+      "name": "component-reuse",
+      "title": "组件提取与跨项目复用",
+      "purpose": "旧代码盘点、上游选型、平台解耦、组件契约与接入验证",
+      "platform": "规则和元数据工具可跨平台；实际组件按编译目标及硬件验证",
+      "version": "1.0.0",
+      "date": "2026-10-16",
+      "origin": "本地独立编写；附原始资料和 GitHub 查询快照"
+    },
+    {
+      "name": "automotive-embedded-engineering",
+      "title": "车载嵌入式工程",
+      "purpose": "ECU、AUTOSAR、车载网络、UDS、安全升级与工程证据",
+      "platform": "规则 Windows/Linux 共用；实际 ECU、电池、仪器和驱动分别验证",
+      "version": "1.0.0",
+      "date": "2026-10-16",
+      "origin": "本地原创工程规则；附官方来源题录与核实范围"
+    },
+    {
+      "name": "battery-bms-engineering",
+      "title": "新能源电池与 BMS 工程",
+      "purpose": "动力/储能电池采样、估算、均衡、热管理、保护与验证",
+      "platform": "规则 Windows/Linux 共用；实际 ECU、电池、仪器和驱动分别验证",
+      "version": "1.0.0",
+      "date": "2026-10-16",
+      "origin": "本地原创工程规则；附官方来源题录与核实范围"
     }
   ]
 }

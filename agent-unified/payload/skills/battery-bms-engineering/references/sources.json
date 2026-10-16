@@ -1,0 +1,168 @@
+{
+  "checked_on": "2026-10-16",
+  "scope": "官方题录和公开目录核对；不是逐条合规审查",
+  "sources": [
+    {
+      "title": "GB 38031 电动汽车用动力蓄电池安全要求",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2025；现行，实施 2026-07-01",
+      "use": "车用动力电池安全与试验范围",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=3AB693FAFF5D9716DF61C61D6FD2187A",
+      "verification": "官方题录；在线正文未逐条读取，不复制试验数值或声称合规",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB/T 38661 电动汽车用电池管理系统技术条件",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2020；现行，实施 2020-10-01",
+      "use": "车用 BMS 技术基线",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=DB3ACC49AC4A146FAA311BB468ACA290",
+      "verification": "官方题录；正文需在官方入口读取后映射条款",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB/T 39086 电动汽车用电池管理系统功能安全要求及试验方法",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2020；现行，实施 2021-04-01",
+      "use": "车用 BMS 功能安全要求与验证",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/std_list?p.p1=0&p.p2=39086&p.p90=circulation_date&p.p91=desc",
+      "verification": "官方标准列表已读取；正文未逐条读取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB/T 31467 电动汽车用锂离子动力电池包和系统电性能试验方法",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2023；现行，实施 2023-11-27",
+      "use": "包/系统性能试验；不替代电池安全试验",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/std_list?p.p1=0&p.p2=31467&p.p90=circulation_date&p.p91=desc",
+      "verification": "官方标准列表已读取；采标正文获取遵循版权约束",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB/T 31486 电动汽车用动力蓄电池电性能要求及试验方法",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2024；现行，实施 2025-04-01",
+      "use": "单体电性能；与包级试验区分",
+      "url": "https://www.samr.gov.cn/xw/zj/art/2025/art_5cfaaf4d8750456bb5570700b1399180.html",
+      "verification": "官方发布说明及题录索引；正文未逐条读取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB/T 27930 非车载传导式充电机与电动汽车之间的数字通信协议",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2023；现行，实施 2024-04-01",
+      "use": "充电机/车辆通信与兼容性",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=6ECF725CD2BCCA2819082279F6B2E243",
+      "verification": "官方题录；正文未逐条读取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB/T 18487.1 电动汽车传导充电系统：通用要求",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2023；现行，实施 2024-04-01",
+      "use": "传导充电系统整体接口和工作条件",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/std_list?p.p1=0&p.p2=18487.1&p.p90=circulation_date&p.p91=desc",
+      "verification": "官方列表已读取；正文未逐条读取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB 44263 电动汽车传导充电系统安全要求",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2024；实施 2025-08-01",
+      "use": "传导充电安全；结合系统侧与车辆侧职责",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/nd?no=2202",
+      "verification": "官方公开通知索引；采用前复核当前题录与正文",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "ISO 15118-20 车网通信：第二代网络与应用层",
+      "publisher": "ISO",
+      "edition_status": "2022 + Amd 1:2026",
+      "use": "EVCC/SECC、双向能量传输通信；按接口与服务选择",
+      "url": "https://www.iso.org/standard/77845.html",
+      "verification": "官方题录/摘要/修改单关系；付费正文及修改单未读取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB/T 32960.3 电动汽车远程服务与管理：通信协议及数据格式",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2025；现行，实施 2025-11-01",
+      "use": "车辆远程数据上报；不是本地保护协议",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/std_list?p.p1=0&p.p2=32960.3&p.p90=circulation_date&p.p91=desc",
+      "verification": "官方题录索引；正文未逐条读取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB 44240 电能存储系统用锂蓄电池和电池组安全要求",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2024；现行，实施 2025-08-01",
+      "use": "储能电芯/电池组安全；不得直接替代车用标准",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=8E520B1991C62DEBC55B46DE49C6F4F5",
+      "verification": "官方题录；正文未逐条读取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB/T 34131 电力储能用电池管理系统",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2023；现行，实施 2023-10-01",
+      "use": "储能 BMS、系统分层与接口的规范入口",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=8057312F550D2812D9A12587FA8668EA",
+      "verification": "官方题录；正文未逐条读取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "GB/T 36276 电力储能用锂离子电池",
+      "publisher": "SAMR/SAC",
+      "edition_status": "2023；现行，实施 2024-07-01",
+      "use": "储能电池性能及相关试验入口",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=866D1F702E193B6EAE5BA96D516D07B0",
+      "verification": "官方题录；正文未逐条读取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "IEC 62619 工业用二次锂电池安全要求",
+      "publisher": "IEC",
+      "edition_status": "2022，第 2 版",
+      "use": "固定式/工业应用；官方范围排除道路车辆，不能作为车用替代规范",
+      "url": "https://webstore.iec.ch/en/publication/64073",
+      "verification": "官方题录/范围摘要已读取；付费正文未读取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "UN R100 电驱动系统车辆批准要求",
+      "publisher": "UNECE / EU Official Journal",
+      "edition_status": "官方索引出现 2026/1695；修订系列须项目确认",
+      "use": "车用电驱动及 REESS 型式批准入口",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A42026X1695",
+      "verification": "仅官方题录索引；正文访问遇到验证页，未确认全部修订与过渡条款",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "UN Manual of Tests and Criteria 38.3",
+      "publisher": "UNECE",
+      "edition_status": "Rev.8 (2023) + Amendment 1 (2025)",
+      "use": "电芯/电池运输试验入口；不代替使用中的 BMS 安全验证",
+      "url": "https://unece.org/transport/dangerous-goods/rev8-files",
+      "verification": "官方目录索引确认版本/修订；正文本次未完整读取；不可在普通工作台自行实施滥用试验",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "BQ79616-Q1 电池监测与均衡器资料",
+      "publisher": "Texas Instruments",
+      "edition_status": "型号入口；按实际设计固定 datasheet/safety manual 版本",
+      "use": "AFE、菊花链、均衡、硬件保护和安全使用假设",
+      "url": "https://www.ti.com/product/BQ79616-Q1",
+      "verification": "官方产品页已读取；安全手册/诊断覆盖等资料按厂商访问条件获取",
+      "checked_on": "2026-10-16"
+    },
+    {
+      "title": "LTC6811-1 / LTC6811-2 电池堆监测器资料",
+      "publisher": "Analog Devices",
+      "edition_status": "官方数据手册 Rev.C",
+      "use": "isoSPI、PEC、开线检测、测量和均衡的器件参考",
+      "url": "https://www.analog.com/en/products/ltc6811-1.html",
+      "verification": "官方文档目录及数据手册首页；驱动实施前须读取相关命令/时序章节",
+      "checked_on": "2026-10-16"
+    }
+  ]
+}

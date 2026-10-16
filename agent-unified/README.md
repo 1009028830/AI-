@@ -11,7 +11,7 @@ Windows/Linux 共用规则和技能，工具程序及驱动按平台准备。
 # 预览：不修改目标目录
 python agent-unified/install_skills.py
 
-# 安装 7 项内置技能，保留已有全局 AGENTS
+# 安装 10 项内置技能，保留已有全局 AGENTS
 python agent-unified/install_skills.py --apply
 
 # 同时安装统一全局规则；已有不同文件默认报冲突
@@ -37,6 +37,9 @@ python agent-unified/install_skills.py --rollback /path/to/backup
 | 技能 | 场景 |
 | --- | --- |
 | agents-engineering-skill | 初始化、审计和升级项目 AGENTS、模板及工作流 |
+| automotive-embedded-engineering | ECU、AUTOSAR、车载网络诊断、安全升级与工程证据 |
+| battery-bms-engineering | 动力/储能 BMS、采样估算、均衡热管理、保护与验证 |
+| component-reuse | 旧代码盘点、组件提取、上游选型与接入验证 |
 | engineering-toolbox | 调用已有静态分析、绘图、接口和协议工具 |
 | stm32-firmware | STM32 Cortex-M 裸机/RTOS、BSP、中断和 DMA |
 | esp-idf-firmware | ESP32 家族 ESP-IDF 应用、组件与运行诊断 |
@@ -45,7 +48,7 @@ python agent-unified/install_skills.py --rollback /path/to/backup
 | hardware-software-validation | 设备协议核对、受控联调和验收证据 |
 
 例如：“使用 `$linux-driver-kernel` 评审当前 BSP 驱动的退出路径”。
-规则按任务加载，不要求每次读取全部技能。资料入口见[规范索引](docs/嵌入式编程规范索引.md)。
+规则按任务加载，不要求每次读取全部技能。资料入口见[规范索引](docs/嵌入式编程规范索引.md)及[车载与新能源电池规则索引](docs/车载嵌入式与新能源电池规则索引.md)。
 
 ## 完整工具环境恢复
 
