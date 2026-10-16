@@ -34,7 +34,7 @@
 
 - L0 只读审计：不改文件，给证据和差距。
 - L1 局部文案/测试修正：micro-plan 后直接实现并运行聚焦检查。
-- L2 模板、初始化器、验证器或工作流行为变化：更新计划，修改实现与测试，运行完整验证。
+- L2 模板或工作流变化：按已授权方案修改，检查结构、链接与相关行为场景；初始化器、验证器及其契约变化再运行受影响回归。
 - L3 发布、覆盖目标项目或外部仓库写入：必须获得精确授权并准备回退。
 
 ## 修改规则
@@ -50,21 +50,19 @@
 
 ## 验证
 
-从本目录执行。Linux/macOS 优先使用 `python3`；环境仅提供 `python`
-命令时等价替换：
+从本目录按改动选择检查；Linux/macOS 的 `python3` 与 Windows 的 `python` 按实际环境替换。
+
+- 只读审计：检查必要资料；没有运行证据需求时不启动验证命令。
+- 规则、技能或模板文案：运行下方对应结构/链接验证，审阅触发边界和相关场景。
+- 初始化器、验证器或安装契约变化：运行受影响回归；需要全门禁时执行 `python3 scripts/check_project.py` 一次，它已包含两个验证器调用和单元测试。
+- 复用同一任务内输入和环境未变的可追溯结果；后续只重跑受影响项。通过后停止，交付阶段不重新运行。
 
 ```bash
-python3 scripts/check_project.py
+python3 scripts/validate_agents_project.py . --template
 python3 scripts/validate_agents_project.py assets/agents-project-template --template
-python3 -B -m unittest discover -s tests -v
 ```
 
-交付前还要确认：
-
-- `agents/openai.yaml` 的默认提示显式包含 `$agents-engineering-skill`。
-- 安装到临时目录后没有未解析的 `{{TOKEN}}`。
-- 默认安装不会覆盖已有 `AGENTS.md` 或脚本。
-- 失败测试能被验证器识别，成功报告不含伪造结果。
+根据实际修改核对 UI 提示、模板占位符、默认不覆盖及失败报告等相关契约；未修改对应脚本时不机械重跑全部安装测试。
 
 ## 常用命令
 

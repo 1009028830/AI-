@@ -57,8 +57,13 @@ before proposing changes. For design or quality review, read
 
 5. **Validate**
 
-   Run both the target's normal checks and this skill's validator. Treat warnings as
-   prompts for judgment, not automatic failures.
+   Match checks to the changed behavior. For guidance-only upgrades, validate structure,
+   links, trigger boundaries, and representative task scenarios; do not run the target's
+   unrelated application tests. Audit mode does not start tests unless the audit needs
+   runtime evidence or the user requests them. Run affected regression tests when changing
+   installer/validator scripts or their contracts. Reuse traceable results while relevant
+   inputs and environments remain unchanged. Stop after required checks pass.
+   Treat warnings as prompts for judgment, not automatic failures.
 
 ## Initialize a project
 
@@ -87,12 +92,14 @@ python3 scripts/validate_agents_project.py \
 The validator checks UTF-8, JSON, root AGENTS structure and size, skill frontmatter,
 skill-directory naming, unresolved placeholders, and local Markdown links.
 
-From this skill repository, run the cross-platform local gate:
+For script changes, release validation, or an explicitly required full gate, run once:
 
 ```bash
 python3 scripts/check_project.py
 ```
 
+Do not separately rerun validators or regression tests already included in this gate.
+For guidance-only edits, use the targeted validator commands above instead.
 It validates this skill, its bundled template, workspace-level `.agents/skills`, and
 regression tests. It reports CodeGraph readiness and runs Ruff, `markdownlint-cli2`,
 Lychee, actionlint, zizmor, ShellCheck, and Gitleaks when relevant and available. Use
