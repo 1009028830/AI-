@@ -14,6 +14,7 @@
 - `agent-unified/payload/skills/`：公开内置技能；工程模板在 `agents-engineering-skill/assets/agents-project-template/`。
 - `agent-unified/install_skills.py`、`restore.py`：安装与恢复入口。
 - `agent-unified/tests/`：安装、恢复等行为测试。
+- `agent-unified/payload/agents/`：按需调用的工程角色；[协作与安装说明](agent-unified/docs/多智能体协作.md)。
 - [技能目录](agent-unified/docs/技能目录.md) 与 [第三方声明](agent-unified/THIRD_PARTY_NOTICES.md)：来源与分发边界。
 - `demo/`：原项目示例，有自己的目录规则；不作为每次任务的必读内容。
 - 根目录其他通用规范是按需参考，不能自动恢复已替换的全任务强制流程。
@@ -22,8 +23,10 @@
 
 - 修改前检查 Git 状态和目标路径规则，保留用户已有改动；不改动无关历史样例。
 - 纯文案核对差异、链接和格式；规则/技能变化检查结构、触发边界、冲突和相关场景，不默认执行全部安装/恢复测试。
+- 常规代码先编译/基础检查，再验证相关功能，最后集中审查本次改动；审查修复后仅复核受影响差异，执行前安全审查仍保留。
 - 安装器、恢复器或构建/测试行为变化运行相关回归；全量检查只由实际影响、明确门禁、发布条件或用户要求触发。
 - 同一任务内相关文件、依赖、配置与环境未变时复用可追溯证据；检查通过后停止，交付只汇总，提交前核对差异与敏感内容。
+- 重复验证优先使用 `python agent-unified/verify.py` 预览，按需增加 `--run --only <任务ID>`；用法与边界见 [增量验证说明](agent-unified/docs/增量验证说明.md)。
 - 工程技能的结构验证从仓库根执行以下命令。总门禁已包含的子检查不再单独重跑。
 
 ```bash

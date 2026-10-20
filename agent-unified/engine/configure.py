@@ -8,6 +8,7 @@ import sys
 from contextlib import closing
 
 from .common import Transaction, read_json, rollback, sha256, write_json
+from .agents import AgentWriteGuard, plan_agents
 
 
 def wrapper_content(command, windows, environment=None):
@@ -23,7 +24,7 @@ def wrapper_content(command, windows, environment=None):
     return ('#!/bin/sh\n' + variables + 'exec ' + ' '.join(shlex.quote(str(x)) for x in command) + ' "$@"\n').encode('utf-8')
 
 
-def configure(bundle, root, codex_home, skills_dir, commands, replace_mcp=False, project_dir=None, update_path=True, replace_skills=False):
+def configure(bundle, root, codex_home, skills_dir, commands, replace_mcp=False, project_dir=None, update_path=True, replace_skills=False, replace_agents=False):
     import tomlkit
     import yaml
     windows = os.name == 'nt'
@@ -59,6 +60,7 @@ def configure(bundle, root, codex_home, skills_dir, commands, replace_mcp=False,
     if before_document != after_document:
         raise RuntimeError('MCP 合并意外改变其他设置')
     new_config = tomlkit.dumps(document).encode('utf-8')
+    agent_plan = plan_agents(bundle, codex_home, replace_agents)
     # 所有跨文件预检查应在第一次配置写入前结束。
     if project_dir is not None:
         if not (project_dir / 'battery_pack_platform/apps/Makefile').is_file():
@@ -69,6 +71,7 @@ def configure(bundle, root, codex_home, skills_dir, commands, replace_mcp=False,
                 if target.exists() and sha256(target) != sha256(source):
                     raise ValueError('Fox 项目文件有冲突，未覆盖: ' + str(target))
     plan = [(codex_home / 'AGENTS.md', (bundle / 'config/AGENTS.md').read_bytes(), 0o644)]
+    plan.extend((target, data, 0o644) for target, data, _ in agent_plan)
     provenance_path = bundle / 'config/payload-provenance.json'
     provenance = {x['path']: x['source_sha256'] for x in read_json(provenance_path)} if provenance_path.exists() else {}
     managed_path = root / 'config/managed-skills.json'
@@ -115,10 +118,13 @@ def configure(bundle, root, codex_home, skills_dir, commands, replace_mcp=False,
             raise ValueError('配置文件被目录占用: ' + str(target))
     if cfg.exists() and cfg.read_text(encoding='utf-8-sig') != original:
         raise RuntimeError('Codex 配置在准备期间被修改，请重试')
+    guard = AgentWriteGuard(agent_plan)
     transaction = Transaction(codex_home / 'agent-unified-backups')
     try:
         for target, content, mode in plan:
+            guard.check()
             transaction.save(target, content, mode)
+            guard.saved(target, content)
         if not database.exists():
             with closing(sqlite3.connect(database)) as connection:
                 with connection:
@@ -126,6 +132,7 @@ def configure(bundle, root, codex_home, skills_dir, commands, replace_mcp=False,
                     connection.execute("INSERT INTO migration_test VALUES (1, 'synthetic fixture')")
         if update_path:
             update_environment(root, transaction)
+        guard.check()
         transaction.commit()
     except Exception:
         transaction.persist('failed')

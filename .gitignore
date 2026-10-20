@@ -5,6 +5,7 @@ __pycache__/
 .venv/
 node_modules/
 .codegraph/
+.verification/
 .env
 .env.*
 *.pem

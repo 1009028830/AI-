@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": "agent-syntax",
+      "description": "智能体安装恢复的 Python 基础检查",
+      "command": [
+        "{python}",
+        "-B",
+        "-c",
+        "from pathlib import Path; files=['engine/agents.py', 'engine/configure.py', 'install_agents.py', 'restore.py', 'tests/test_agents.py', 'tests/test_restore.py']; [compile(Path(p).read_text(encoding=\"utf-8\"), p, \"exec\") for p in files]; print(\"Python syntax passed\")"
+      ],
+      "inputs": [
+        "engine/agents.py",
+        "engine/configure.py",
+        "install_agents.py",
+        "restore.py",
+        "tests/test_agents.py",
+        "tests/test_restore.py"
+      ],
+      "cache": true,
+      "timeout": 30
+    },
+    {
+      "id": "guidance",
+      "description": "工程技能、模板与引用结构",
+      "command": [
+        "{python}",
+        "-B",
+        "payload/skills/agents-engineering-skill/scripts/validate_agents_project.py",
+        "payload/skills/agents-engineering-skill",
+        "--template"
+      ],
+      "inputs": [
+        "payload/skills/agents-engineering-skill/**/*",
+        "config/AGENTS.md"
+      ],
+      "cache": true,
+      "timeout": 90
+    },
+    {
+      "id": "runner",
+      "description": "增量选择、缓存、失败、设备边界与 CLI 回归",
+      "command": [
+        "{python}",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "payload/skills/agents-engineering-skill/tests",
+        "-p",
+        "test_incremental_verify.py",
+        "-v"
+      ],
+      "inputs": [
+        "payload/skills/agents-engineering-skill/assets/agents-project-template/scripts/verify.py",
+        "payload/skills/agents-engineering-skill/tests/test_incremental_verify.py"
+      ],
+      "cache": true,
+      "timeout": 180
+    },
+    {
+      "id": "template",
+      "description": "初始化器及原有工程模板回归",
+      "command": [
+        "{python}",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "payload/skills/agents-engineering-skill/tests",
+        "-p",
+        "test_agents_engineering.py",
+        "-v"
+      ],
+      "inputs": [
+        "payload/skills/agents-engineering-skill/**/*"
+      ],
+      "cache": true,
+      "timeout": 180
+    },
+    {
+      "id": "restore",
+      "description": "恢复引擎隔离测试",
+      "command": [
+        "{python}",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_restore.py",
+        "-v"
+      ],
+      "inputs": [
+        "engine/**/*",
+        "restore.py",
+        "restore.ps1",
+        "restore.sh",
+        "tests/test_restore.py",
+        "config/**/*",
+        "locks/**/*",
+        "payload/agents/*.toml"
+      ],
+      "cache": true,
+      "timeout": 180,
+      "depends_on": [
+        "agent-syntax"
+      ]
+    },
+    {
+      "id": "installer",
+      "description": "公开技能安装器隔离测试",
+      "command": [
+        "{python}",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_install_skills.py",
+        "-v"
+      ],
+      "inputs": [
+        "install_skills.py",
+        "tests/test_install_skills.py",
+        "config/AGENTS.md",
+        "payload/skills/**/*",
+        "engine/agents.py",
+        "engine/common.py",
+        "payload/agents/*.toml"
+      ],
+      "cache": true,
+      "timeout": 180,
+      "depends_on": [
+        "agent-syntax"
+      ]
+    },
+    {
+      "id": "agents",
+      "description": "角色安装冲突、回退和实际角色配置",
+      "command": [
+        "{python}",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_agents.py",
+        "-v"
+      ],
+      "inputs": [
+        "engine/agents.py",
+        "engine/common.py",
+        "install_agents.py",
+        "tests/test_agents.py",
+        "payload/agents/*.toml"
+      ],
+      "depends_on": [
+        "agent-syntax"
+      ],
+      "cache": true,
+      "timeout": 90
+    }
+  ]
+}

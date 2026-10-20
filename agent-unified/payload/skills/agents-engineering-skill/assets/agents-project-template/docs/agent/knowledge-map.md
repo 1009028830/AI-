@@ -10,6 +10,8 @@
 | 架构与模块边界 | `docs/architecture.md` 或源码入口 | TODO |
 | 构建与依赖 | 构建清单、锁文件、CI | TODO |
 | 测试与质量门禁 | 测试配置、CI、`references/definition-of-done.md` | TODO |
+| 多智能体分工与证据交接 | `skills/multi-agent-coordination/SKILL.md` | 按需启用，单一文件修改者，整合后验收 |
+| 增量验证与场景 | `verification.json`、`references/incremental-verification.md`、`references/verification-scenarios.md` | 默认仅规则检查，业务按需接入 |
 | 部署与运行 | 部署文档、服务配置、启动脚本 | TODO |
 | 已知问题 | `docs/development_memory.md` | 持续维护 |
 

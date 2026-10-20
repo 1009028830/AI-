@@ -305,6 +305,59 @@ class ConfigurationBase(TemporaryCase):
 
 @unittest.skipUnless(CONFIG_DEPS, '需要随包 tomlkit 与 PyYAML，测试不会联网安装')
 class ConfigurationTests(ConfigurationBase):
+    def test_concurrent_agent_creation_is_preserved_during_restore(self):
+        folder = self.bundle / 'payload/agents'
+        folder.mkdir()
+        content = b'name = "example"\ndescription = "test"\ndeveloper_instructions = "read only"\n'
+        (folder / 'example.toml').write_bytes(content)
+        target = self.codex / 'agents/example.toml'
+        concurrent = content.replace(b'read only', b'concurrent custom')
+        original_save = common.Transaction.save
+
+        def save_with_concurrent_edit(transaction, path, data, mode=0o644):
+            result = original_save(transaction, path, data, mode)
+            if path == self.codex / 'AGENTS.md':
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(concurrent)
+            return result
+
+        with mock.patch.object(common.Transaction, 'save', save_with_concurrent_edit):
+            with self.assertRaises(RuntimeError):
+                self.configure()
+        self.assertEqual(target.read_bytes(), concurrent)
+        self.assertFalse((self.codex / 'AGENTS.md').exists())
+        self.assertFalse((self.codex / 'config.toml').exists())
+
+    def test_agents_restore_conflict_and_explicit_replacement_rollback(self):
+        folder = self.bundle / 'payload/agents'
+        folder.mkdir()
+        content = b'name = "example"\ndescription = "test"\ndeveloper_instructions = "read only"\n'
+        (folder / 'example.toml').write_bytes(content)
+        target = self.codex / 'agents/example.toml'
+        target.parent.mkdir()
+        previous = content.replace(b'read only', b'user custom')
+        target.write_bytes(previous)
+        with self.assertRaises(ValueError):
+            self.configure()
+        self.assertFalse((self.codex / 'AGENTS.md').exists())
+        result = self.configure(replace_agents=True)
+        self.assertEqual(target.read_bytes(), content)
+        common.rollback(result['backup'])
+        self.assertEqual(target.read_bytes(), previous)
+
+    def test_restore_preflight_rejects_agent_conflict(self):
+        from types import SimpleNamespace
+        folder = self.bundle / 'payload/agents'
+        folder.mkdir()
+        content = b'name = "example"\ndescription = "test"\ndeveloper_instructions = "read only"\n'
+        (folder / 'example.toml').write_bytes(content)
+        target = self.codex / 'agents/example.toml'
+        target.parent.mkdir()
+        target.write_bytes(content.replace(b'read only', b'user custom'))
+        with mock.patch.object(restore, 'BUNDLE', self.bundle):
+            with self.assertRaises(ValueError):
+                restore.preflight_configuration(SimpleNamespace(), self.root, self.codex, self.skills)
+
     def test_replaced_global_rules_and_skill_are_restorable(self):
         original_rules = self.codex / 'AGENTS.md'
         original_rules.write_bytes(b'user previous global rules')

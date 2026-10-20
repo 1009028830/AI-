@@ -27,6 +27,53 @@ class InstallTests(unittest.TestCase):
         self.assertEqual(len(install_skills.plan_install(self.bundle, self.home)), 1)
         self.assertFalse(self.home.exists())
 
+    def test_agents_share_install_transaction_and_rollback(self):
+        folder = self.bundle / 'payload/agents'
+        folder.mkdir()
+        content = b'name = "example"\ndescription = "test"\ndeveloper_instructions = "read only"\n'
+        (folder / 'example.toml').write_bytes(content)
+        plan = install_skills.plan_install(self.bundle, self.home, True)
+        backup = install_skills.apply_plan(plan, self.home)
+        self.assertEqual((self.home / 'agents/example.toml').read_bytes(), content)
+        self.assertEqual(install_skills.plan_install(self.bundle, self.home, True), [])
+        rollback(backup)
+        self.assertFalse((self.home / 'agents/example.toml').exists())
+        self.assertFalse((self.home / 'skills/example/SKILL.md').exists())
+
+    def test_agent_conflict_blocks_skill_writes(self):
+        folder = self.bundle / 'payload/agents'
+        folder.mkdir()
+        content = b'name = "example"\ndescription = "test"\ndeveloper_instructions = "read only"\n'
+        (folder / 'example.toml').write_bytes(content)
+        target = self.home / 'agents/example.toml'
+        target.parent.mkdir(parents=True)
+        target.write_bytes(content.replace(b'read only', b'custom'))
+        with self.assertRaises(ValueError):
+            install_skills.plan_install(self.bundle, self.home)
+        self.assertFalse((self.home / 'skills').exists())
+
+    def test_new_duplicate_role_during_install_aborts_and_preserves_edit(self):
+        folder = self.bundle / 'payload/agents'
+        folder.mkdir()
+        content = b'name = "example"\ndescription = "test"\ndeveloper_instructions = "read only"\n'
+        (folder / 'example.toml').write_bytes(content)
+        plan = install_skills.plan_install(self.bundle, self.home)
+        concurrent = self.home / 'agents/other.toml'
+        original_save = Transaction.save
+
+        def save_with_concurrent_role(transaction, target, data, mode=0o644):
+            result = original_save(transaction, target, data, mode)
+            if target.name == 'example.toml':
+                concurrent.write_bytes(content)
+            return result
+
+        with mock.patch.object(Transaction, 'save', save_with_concurrent_role):
+            with self.assertRaises(RuntimeError):
+                install_skills.apply_plan(plan, self.home)
+        self.assertEqual(concurrent.read_bytes(), content)
+        self.assertFalse((self.home / 'agents/example.toml').exists())
+        self.assertFalse((self.home / 'skills/example/SKILL.md').exists())
+
     def test_install_idempotence_and_rollback(self):
         plan = install_skills.plan_install(self.bundle, self.home, True)
         backup = install_skills.apply_plan(plan, self.home)

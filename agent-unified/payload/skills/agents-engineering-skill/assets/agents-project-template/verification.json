@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": "agent-guidance",
+      "description": "只验证当前项目的 AGENTS、技能及引用结构，不代表业务验收。",
+      "command": ["{python}", "-B", "scripts/validate_agents_project.py", "."],
+      "inputs": ["AGENTS.md", "skills/**/*", "references/**/*", "docs/**/*", "scripts/validate_agents_project.py"],
+      "cache": true,
+      "timeout": 60
+    }
+  ]
+}

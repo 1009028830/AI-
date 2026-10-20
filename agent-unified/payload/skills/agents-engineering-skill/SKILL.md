@@ -110,6 +110,20 @@ Use `--skip-optional-tools` for the dependency-free gate. The tools, CI policy, 
 reversible CodeGraph adoption path are documented in
 [references/code-intelligence-tools.md](references/code-intelligence-tools.md).
 
+## Incremental verification
+
+For repeated project checks, use the bundled
+[verification runner guide](assets/agents-project-template/references/incremental-verification.md).
+The initializer installs `scripts/verify.py` and `verification.json` without overwriting
+existing files by default. Select applicable cases from the
+[24-scenario catalog](assets/agents-project-template/references/verification-scenarios.md);
+do not load or execute every scenario. Cache only declared, reproducible local checks.
+External services and devices require explicit task selection and existing action authority.
+
+For independent parallel subtasks or a necessary specialist perspective, use the
+[coordination skill](assets/agents-project-template/skills/multi-agent-coordination/SKILL.md).
+Keep simple work single-agent and review the integrated change after relevant checks.
+
 ## Exit criteria
 
 - Root `AGENTS.md` is a concise map rather than a duplicated manual.

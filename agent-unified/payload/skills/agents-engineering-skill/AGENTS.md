@@ -22,6 +22,7 @@
 | `references/` | 审计与既有仓库采用原则，按需加载 |
 | `evals/evals.json` | 真实触发/行为测试场景 |
 | `tests/` | 初始化器和验证器回归测试 |
+| `assets/agents-project-template/scripts/verify.py` | 默认预览、按声明输入复用结果的统一验证入口 |
 
 ## 每次开始前
 

@@ -6,8 +6,16 @@ from pathlib import Path
 import sys
 
 from engine.common import Transaction, ensure_no_links, rollback
+from engine.agents import AgentWriteGuard, plan_agents
 
 BUNDLE = Path(__file__).resolve().parent
+
+
+class InstallPlan(list):
+    """技能与角色共享事务，同时保留角色目录预检查快照。"""
+    def __init__(self, agent_plan):
+        super().__init__(agent_plan)
+        self.agent_plan = agent_plan
 
 
 def plan_install(bundle, codex_home, with_rules=False, replace_existing=False):
@@ -30,7 +38,7 @@ def plan_install(bundle, codex_home, with_rules=False, replace_existing=False):
         raise ValueError('没有可安装技能')
     if with_rules:
         candidates.append((bundle / 'config/AGENTS.md', codex_home / 'AGENTS.md'))
-    plan = []
+    plan = InstallPlan(plan_agents(bundle, codex_home, replace_existing))
     for source, target in candidates:
         ensure_no_links(source.absolute())
         ensure_no_links(target)
@@ -51,14 +59,18 @@ def plan_install(bundle, codex_home, with_rules=False, replace_existing=False):
 def apply_plan(plan, codex_home):
     if not plan:
         return None
+    guard = AgentWriteGuard(getattr(plan, 'agent_plan', []))
     transaction = Transaction(codex_home / 'agent-unified-backups')
     try:
         for target, data, expected in plan:
+            guard.check()
             ensure_no_links(target)
             current = target.read_bytes() if target.exists() else None
             if current != expected:
                 raise RuntimeError('预检查后目标被修改，停止: ' + str(target))
             transaction.save(target, data)
+            guard.saved(target, data)
+        guard.check()
         transaction.commit()
     except Exception:
         if transaction.records:

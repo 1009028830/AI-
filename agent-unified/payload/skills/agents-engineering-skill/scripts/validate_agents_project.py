@@ -23,6 +23,7 @@ TEXT_SUFFIXES = {
     ".cmd",
 }
 IGNORED_DIRECTORY_NAMES = {
+    ".verification",
     ".codegraph",
     ".git",
     ".mypy_cache",

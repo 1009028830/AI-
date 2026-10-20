@@ -47,8 +47,11 @@
 | 重复使用的自动化 | `reuse-scripts` |
 | 代码/配置/规则行为变化的风险匹配验证，或明确要求的评审 | `verification-and-review` |
 | 多模块、高风险或正式交付 | `delivery-checklist` |
+| 独立子任务并行或独立专项视角 | `multi-agent-coordination` |
 
 Skill 是按需工作流，不一次性全部加载。只读取被触发的 `skills/<name>/SKILL.md` 及其直接引用资料。
+
+独立子任务适合并行时，请按 `multi-agent-coordination` 委派；简单工作保持单智能体。主智能体统一文件所有权与集成验收，子任务不重复已有验证和最终审查。
 
 ## 项目硬约束
 
@@ -64,6 +67,7 @@ Skill 是按需工作流，不一次性全部加载。只读取被触发的 `ski
 项目级完成标准见 [`references/definition-of-done.md`](references/definition-of-done.md)。
 
 - 普通问答不主动运行测试或构建；小修改采用聚焦检查，不强制验证矩阵或五轴审查。
+- 常规代码按“编译/基础检查 → 相关功能验证 → 一轮集中审查”推进；修复后只复核受影响差异。顺序、例外和停止条件见 [`verification-and-review`](skills/verification-and-review/SKILL.md)。
 - 按实际变化选最小相关检查，只有影响范围、门禁、发布或用户要求需要时扩大回归。
 - 同一任务内相关输入和环境未变时复用可追溯结果；后续只重跑受影响项，总入口包含的检查不单独重跑。
 - 必要检查通过且无新风险证据后停止；交付或仅 Git 提交不重新启动验证，仍满足明确门禁。
@@ -73,6 +77,8 @@ Skill 是按需工作流，不一次性全部加载。只读取被触发的 `ski
 - 修改 AGENTS、skills、references 或知识地图后，运行项目的 AGENTS 验证命令。
 
 ## 常用命令
+
+重复验证优先使用 `python scripts/verify.py` 预览，增加 `--run --only <任务ID>` 执行相关检查。配置见 `verification.json`；按需阅读 [入口说明](references/incremental-verification.md) 与 [场景目录](references/verification-scenarios.md)。默认模板只接入规则检查，不代表业务功能已验证。
 
 在仓库根目录执行；如项目实际命令变化，同步更新本节和知识地图。
 

@@ -6,7 +6,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED = {'staging', '__pycache__', '.pytest_cache', '.git', '.bootstrap'}
+EXCLUDED = {'staging', '__pycache__', '.pytest_cache', '.git', '.bootstrap', '.verification'}
 def files():
     return sorted(p for p in ROOT.rglob('*') if p.is_file() and not any(x in EXCLUDED for x in p.relative_to(ROOT).parts) and p.name not in ('MANIFEST.json', 'SHA256SUMS'))
 def digest(path):

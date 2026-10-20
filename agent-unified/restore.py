@@ -100,8 +100,10 @@ def preflight_system(target, offline, skip_system):
 
 def preflight_configuration(args, root, codex_home, skills_dir):
     from engine.common import ensure_no_links
+    from engine.agents import plan_agents
     for path in (root, codex_home, skills_dir):
         ensure_no_links(path)
+    plan_agents(BUNDLE, codex_home, getattr(args, 'replace_existing_agents', False))
     cfg = codex_home / 'config.toml'
     if cfg.exists():
         import tomllib
@@ -216,6 +218,8 @@ def install(args, target, root, codex_home, skills_dir):
             config_command.append('--replace-existing-mcp')
         if args.replace_existing_skills:
             config_command.append('--replace-existing-skills')
+        if getattr(args, 'replace_existing_agents', False):
+            config_command.append('--replace-existing-agents')
         if args.no_path:
             config_command.append('--no-path')
         if args.project_dir:
@@ -277,6 +281,7 @@ def main():
     parser.add_argument('--no-path', action='store_true')
     parser.add_argument('--replace-existing-mcp', action='store_true')
     parser.add_argument('--replace-existing-skills', action='store_true')
+    parser.add_argument('--replace-existing-agents', action='store_true')
     parser.add_argument('--project-dir', type=Path)
     parser.add_argument('--configure-worker', action='store_true', help=argparse.SUPPRESS)
     args = parser.parse_args()
@@ -287,7 +292,7 @@ def main():
     skills_dir = (args.skills_dir or codex_home / 'skills').expanduser().absolute()
     if args.configure_worker:
         from engine.configure import configure
-        result = configure(BUNDLE, root, codex_home, skills_dir, read_json(root / 'commands.json'), args.replace_existing_mcp, args.project_dir, not args.no_path, args.replace_existing_skills)
+        result = configure(BUNDLE, root, codex_home, skills_dir, read_json(root / 'commands.json'), args.replace_existing_mcp, args.project_dir, not args.no_path, args.replace_existing_skills, args.replace_existing_agents)
         write_json(root / 'verification/configuration.json', result)
         print('配置恢复:', result['skills'], '项技能，', result['changed_files'], '个变更文件')
         return 0
@@ -303,7 +308,8 @@ def main():
         return 0
     print('工具目录:', root, '\nCodex 配置:', codex_home, '\n技能目录:', skills_dir)
     skill_count = len(list((BUNDLE / 'payload/skills').glob('*/SKILL.md')))
-    print(f'恢复 {skill_count} 项个人/通用技能、统一 AGENTS、3 个 MCP 及当前平台工具。')
+    agent_count = len(list((BUNDLE / 'payload/agents').glob('*.toml')))
+    print(f'恢复 {skill_count} 项个人/通用技能、{agent_count} 个智能体角色、统一 AGENTS、3 个 MCP 及当前平台工具。')
     if args.apply:
         install(args, target, root, codex_home, skills_dir)
     else:
