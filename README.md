@@ -11,7 +11,7 @@
 - [统一代码架构与编码规范](统一代码架构与编码规范.md)：v1.3，三层架构、硬件隔离、Doxygen/kernel-doc 注释、接口模板与 DCDC 贯穿示例；正文随工程技能安装，换机后仍可按需读取。ROS 1/2 仅作为组织方法参考，实际运行依赖由项目决定。
 - [车载与新能源电池规则](agent-unified/docs/车载嵌入式与新能源电池规则索引.md)：ECU、车载通信、功能安全、BMS 与储能，含 72 条检查项和 38 项官方来源。
 - [公开版 Excel 维护清单](agent-unified/docs/技能与MCP维护清单-公开版.xlsx)：可筛选、维护版本和记录更新。
-- [仓库协作规则](AGENTS.md)采用按影响验证与有效证据复用；[原项目模板](demo/)保留，按项目需要采用。
+- [仓库协作规则](AGENTS.md)采用按影响验证与有效证据复用；新项目采用[现行工程模板](agent-unified/payload/skills/agents-engineering-skill/assets/agents-project-template/)。旧 demo 和重复规范已经停用，历史内容不作为当前流程。
 - [Git/Gitee 协作与版本管理](agent-unified/payload/skills/agents-engineering-skill/assets/agents-project-template/references/git-collaboration.md)：个人提交/推送、协作时的 Git Flow 与 PR、Conventional Commits、增量检查、Tag/Release 与 LFS 边界，适配既有 GitHub/Gitee 仓库。
 
 公开版内置 **10 项技能**：AGENTS 工程体系、工程工具箱、组件提取与复用，以及 STM32、ESP-IDF、

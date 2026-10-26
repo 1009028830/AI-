@@ -35,9 +35,14 @@ Use four levels:
 
 - L0 read-only: inspect and report.
 - L1 small/reversible: micro-plan, edit, focused verification.
-- L2 standard: necessary persisted plan, existing authorization check, incremental
+- L2 standard: concise plan, existing authorization check, incremental
   implementation, review. Request confirmation only for uncovered decisions or actions.
 - L3 high-risk: L2 plus rollback, compatibility/security analysis, and target-environment proof.
+
+Classify by consequences, not file counts or task labels. An ordinary L2 plan may stay
+in the conversation. Persist the necessary plan when cross-module interfaces, high risk,
+cross-session collaboration, or explicit user/project requirements need a durable record.
+Use only relevant template sections; do not create a document merely to fill every heading.
 
 An existing explicit authorization remains valid for the same scope. Writing a new plan
 does not by itself require another approval. Honor an explicit separate-approval request,

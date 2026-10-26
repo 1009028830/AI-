@@ -8,7 +8,6 @@ import importlib.metadata
 import json
 import os
 from pathlib import Path
-import shutil
 import subprocess
 import sys
 import tarfile
@@ -64,26 +63,22 @@ def fetch(url: str) -> bytes:
 def download(asset: dict) -> dict:
     destination = ROOT / asset["path"]
     destination.parent.mkdir(parents=True, exist_ok=True)
-    source = asset.pop("local_source", None)
     if destination.is_file() and sha256(destination) == asset["sha256"]:
         asset["bytes"] = destination.stat().st_size
         return asset
-    if source and Path(source).is_file() and sha256(Path(source)) == asset["sha256"]:
-        shutil.copyfile(source, destination)
-    else:
-        for attempt in range(3):
-            try:
-                data = fetch(asset["url"])
-                if hashlib.sha256(data).hexdigest() != asset["sha256"]:
-                    raise ValueError(f"SHA256 不匹配: {destination.name}")
-                partial = destination.with_name(destination.name + ".part")
-                partial.write_bytes(data)
-                partial.replace(destination)
-                break
-            except (OSError, ValueError):
-                if attempt == 2:
-                    raise
-                time.sleep(2 ** attempt)
+    for attempt in range(3):
+        try:
+            data = fetch(asset["url"])
+            if hashlib.sha256(data).hexdigest() != asset["sha256"]:
+                raise ValueError(f"SHA256 不匹配: {destination.name}")
+            partial = destination.with_name(destination.name + ".part")
+            partial.write_bytes(data)
+            partial.replace(destination)
+            break
+        except (OSError, ValueError):
+            if attempt == 2:
+                raise
+            time.sleep(2 ** attempt)
     asset["bytes"] = destination.stat().st_size
     print(f"已校验 {asset['id']} {asset['platform']} {asset['bytes']}", flush=True)
     return asset
@@ -94,7 +89,6 @@ def runtime_sources() -> list[dict]:
     python = json.loads(fetch("https://api.github.com/repos/astral-sh/python-build-standalone/releases/tags/20260510"))
     sums = dict((line.split()[1], line.split()[0]) for line in fetch("https://nodejs.org/dist/v24.21.0/SHASUMS256.txt").decode().splitlines())
     result = []
-    previous = ROOT.parent / "agent-migration/agent-skills-tools-migration-20260910-150721/tooling/downloads"
     for platform, (target, _) in PLATFORMS.items():
         is_windows = platform.startswith("windows")
         py_name = f"cpython-3.13.13+20260510-{target}-install_only_stripped.tar.gz"
@@ -110,10 +104,6 @@ def runtime_sources() -> list[dict]:
             ("node", "24.21.0", node_name, f"https://nodejs.org/dist/v24.21.0/{node_name}", sums[node_name], "zip" if is_windows else "tar.xz", node_root + ("/node.exe" if is_windows else "/bin/node")),
         ):
             asset = dict(id=tool, version=version, platform=platform, path=f"assets/runtimes/{platform}/{name}", sha256=digest, kind=kind, executable=executable, url=url)
-            if (previous / name).is_file():
-                asset["local_source"] = str(previous / name)
-            if name == "node-v24.21.0-win-x64.zip":
-                asset["local_source"] = str(ROOT.parent / "便携工具包-20260910/downloads" / name)
             result.append(asset)
     return result
 
@@ -224,7 +214,11 @@ def main() -> None:
     parser.add_argument("--mode", choices=["all", "runtimes", "python", "verify-windows"], default="all")
     parser.add_argument("--uv", default="uv")
     parser.add_argument("--pip-python", default=sys.executable)
+    parser.add_argument("--apply", action="store_true", help="执行下载/解析/验证；默认仅预览且不访问网络")
     args = parser.parse_args()
+    if not args.apply:
+        print(f"只读计划：mode={args.mode}；现有正式资产优先复用，--apply 才执行所选准备步骤")
+        return
     for directory in ("assets", "config", "locks"):
         (ROOT / directory).mkdir(exist_ok=True)
     if args.mode == "verify-windows":

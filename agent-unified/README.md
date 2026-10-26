@@ -68,8 +68,9 @@ python agent-unified/install_skills.py --rollback /path/to/backup
 **Git 克隆不含 `assets/`，不能直接等同于完整离线包。** 完整恢复入口需要先补齐
 拥有使用权限的、与清单哈希一致的资源和 wheelhouse，再运行
 `python agent-unified/scripts/build_release.py` 生成本地清单。
-维护者准备脚本中部分 Windows 原生工具仍依赖已有的本地上游缓存，当前并非一条命令
-从全新机器重新构建所有二进制的流水线；无资源时使用上面的规则/技能安装入口。
+资产维护以 `config/` 锁定的正式成品为输入，不再隐式读取旧工具安装目录。
+默认预览，`--verify` 校验资源，显式导入或重制的边界见[资产维护说明](docs/资产维护.md)。
+公开克隆不会凭空获得重打包的二进制；没有资源时使用上面的规则/技能安装入口。
 
 资源齐备后运行 `restore.ps1` 或 `bash restore.sh` 预览，显式增加 `-Apply` 或 `--apply`
 才执行工具恢复。支持范围为 Windows x64、GNU/Linux x64/ARM64；GNU/Linux 资源的

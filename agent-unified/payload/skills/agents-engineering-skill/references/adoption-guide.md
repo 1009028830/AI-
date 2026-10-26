@@ -47,10 +47,18 @@ Each stage must leave the repository usable and independently reviewable.
 
 - Ask a read-only question: the agent should inspect without creating a plan file.
 - Ask for a one-file safe edit: the agent should use a micro-plan and relevant check.
+- Ask for the same low-risk local correction across three files: file count alone should
+  not raise its risk level or create a plan document.
+- Ask for an ordinary behavior change with a known scope: a concise conversation plan
+  is enough unless interfaces, risk, ongoing collaboration, or explicit requirements
+  justify a persistent record.
 - Ask for an interface or protocol change: the agent should record the necessary plan and
   check existing authorization. Continue when that authorization covers the scope and
   actions; pause only for uncovered decisions, permissions, or materially expanded risk.
 - Explicitly request separate plan approval: the agent should wait at that boundary even
   when implementation has otherwise been requested.
 - Ask for a risky external action: the agent should identify the additional authority required.
+- Ask for a one-time file comparison or temporary data inspection: use an existing tool
+  or a scoped temporary command; create a maintained script only when reuse is established
+  or explicitly requested. Read-only tasks must remain read-only.
 - Break a local Markdown link or skill name: the validator should fail.

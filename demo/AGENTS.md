@@ -1,5 +1,7 @@
 # AGENTS.md
 
+> 历史示例，已停用（2026-10-26）。新项目使用 [现行工程模板](../agent-unified/payload/skills/agents-engineering-skill/assets/agents-project-template/)。下文是旧流程原文，不再作为执行要求；其中“任何任务先加载技能”“小改动再次审批”等要求已由[仓库规则](../AGENTS.md)替代。当前用户的明确要求和授权持续有效。
+
 本文件为 AI/开发助手提供项目级别的执行指导。详细工作流定义在 `skills/` 目录，参考模板在 `references/` 目录，权威参考文档在 `docs/process/`。
 
 ---
