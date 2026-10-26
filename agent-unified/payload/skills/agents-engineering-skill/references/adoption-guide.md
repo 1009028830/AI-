@@ -47,7 +47,10 @@ Each stage must leave the repository usable and independently reviewable.
 
 - Ask a read-only question: the agent should inspect without creating a plan file.
 - Ask for a one-file safe edit: the agent should use a micro-plan and relevant check.
-- Ask for an interface or protocol change: the agent should create a persisted plan and wait
-  for approval.
+- Ask for an interface or protocol change: the agent should record the necessary plan and
+  check existing authorization. Continue when that authorization covers the scope and
+  actions; pause only for uncovered decisions, permissions, or materially expanded risk.
+- Explicitly request separate plan approval: the agent should wait at that boundary even
+  when implementation has otherwise been requested.
 - Ask for a risky external action: the agent should identify the additional authority required.
 - Break a local Markdown link or skill name: the validator should fail.

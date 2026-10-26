@@ -110,6 +110,13 @@ Use `--skip-optional-tools` for the dependency-free gate. The tools, CI policy, 
 reversible CodeGraph adoption path are documented in
 [references/code-intelligence-tools.md](references/code-intelligence-tools.md).
 
+## 通用代码规范参考
+
+需要选择或调整设备软件架构、硬件隔离、公共接口或注释约定时，按需读取
+[统一代码架构与编码规范](references/统一代码架构与编码规范.md)。该文件随技能安装，
+不依赖原工作区路径；只读取任务相关章节，不因普通修改加载全文。
+默认借鉴 ROS 1/2 的组织方法，实际使用 ROS 由项目决定；内核、SDK 与已有项目约定按其作用域适配。
+
 ## Incremental verification
 
 For repeated project checks, use the bundled

@@ -35,8 +35,14 @@ Use four levels:
 
 - L0 read-only: inspect and report.
 - L1 small/reversible: micro-plan, edit, focused verification.
-- L2 standard: persisted plan, approval, incremental implementation, review.
+- L2 standard: necessary persisted plan, existing authorization check, incremental
+  implementation, review. Request confirmation only for uncovered decisions or actions.
 - L3 high-risk: L2 plus rollback, compatibility/security analysis, and target-environment proof.
+
+An existing explicit authorization remains valid for the same scope. Writing a new plan
+does not by itself require another approval. Honor an explicit separate-approval request,
+and do not infer device, publication, or irreversible-action authority from a general
+implementation request.
 
 ## Evidence over confidence
 
