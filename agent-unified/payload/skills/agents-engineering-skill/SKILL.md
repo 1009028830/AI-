@@ -121,8 +121,8 @@ reversible CodeGraph adoption path are documented in
 
 涉及提交、推送、PR、分支流转或版本交付时，按需读取
 [Git/Gitee 协作规则](assets/agents-project-template/references/git-collaboration.md)。
-参考文件随本技能和项目模板安装；采用仓库实际分支模型，复用有效验证，
-区分本地提交、远端推送、合并及发布授权。普通实现不因此启动版本交付流程。
+参考文件随本技能和项目模板安装；个人工作默认提交/推送，协作或明确要求时创建 PR，
+遵守仓库实际分支模型与保护限制，复用有效验证，区分合并及发布授权。普通实现不因此启动版本交付流程。
 
 ## Incremental verification
 

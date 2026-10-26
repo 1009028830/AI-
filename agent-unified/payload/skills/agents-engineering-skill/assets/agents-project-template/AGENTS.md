@@ -51,7 +51,7 @@
 
 Skill 是按需工作流，不一次性全部加载。只读取被触发的 `skills/<name>/SKILL.md` 及其直接引用资料。
 
-提交、推送、PR、分支流转及发版按需读取 [Git/Gitee 协作规则](references/git-collaboration.md)。以本项目实际分支模型和保护规则为准，复用有效检查；提交授权不自动包含合并或发布。
+提交、推送、PR、分支流转及发版按需读取 [Git/Gitee 协作规则](references/git-collaboration.md)。个人工作默认提交/推送，协作或明确要求时创建 PR；遵守本项目保护限制，复用有效检查，提交授权不自动包含合并或发布。
 
 独立子任务适合并行时，请按 `multi-agent-coordination` 委派；简单工作保持单智能体。主智能体统一文件所有权与集成验收，子任务不重复已有验证和最终审查。
 

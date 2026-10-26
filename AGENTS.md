@@ -17,7 +17,7 @@
 - `agent-unified/payload/agents/`：按需调用的工程角色；[协作与安装说明](agent-unified/docs/多智能体协作.md)。
 - [技能目录](agent-unified/docs/技能目录.md) 与 [第三方声明](agent-unified/THIRD_PARTY_NOTICES.md)：来源与分发边界。
 - [统一代码架构与编码规范](统一代码架构与编码规范.md)：三层架构、硬件隔离与注释约定的入口；正文随工程技能恢复，按需读取。
-- [Git/Gitee 协作规则](agent-unified/payload/skills/agents-engineering-skill/assets/agents-project-template/references/git-collaboration.md)：提交、PR、分支、版本与回退要求；当前已有主干沿用，后续变更经工作分支与 PR，远端保护设置需单独核实。
+- [Git/Gitee 协作规则](agent-unified/payload/skills/agents-engineering-skill/assets/agents-project-template/references/git-collaboration.md)：提交、分支、版本与回退要求；个人工作默认提交/推送，协作或明确要求时创建 PR，远端保护设置需单独核实。
 - `demo/`：原项目示例，有自己的目录规则；不作为每次任务的必读内容。
 - 根目录其他通用规范是按需参考，不能自动恢复已替换的全任务强制流程。
 

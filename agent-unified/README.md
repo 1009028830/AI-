@@ -5,7 +5,7 @@ Windows/Linux 共用规则和技能，工具程序及驱动按平台准备。
 
 **2026-10-26 规范与开发流更新：** [统一代码架构与编码规范 v1.3](payload/skills/agents-engineering-skill/references/统一代码架构与编码规范.md)随工程技能安装，覆盖三层架构、硬件隔离与 Doxygen/kernel-doc 注释。L2/L3 先核对已有授权，只有未覆盖事项才确认；运行结果不自动替代需求与协议合同。验证范围见[本次更新说明](docs/20261026规范与开发流更新.md)。
 
-**2026-10-26 Git 协作规则：** [提交与版本管理](payload/skills/agents-engineering-skill/assets/agents-project-template/references/git-collaboration.md)已纳入全局规则和工程模板，覆盖 GitHub/Gitee 的分支、PR、提交信息、验证及发版边界；规则更新不会自动修改远端保护、CI 或 Git hooks。
+**2026-10-26 Git 协作规则：** [提交与版本管理](payload/skills/agents-engineering-skill/assets/agents-project-template/references/git-collaboration.md)已纳入全局规则和工程模板；个人工作默认提交/推送，只有多人协作或明确要求时创建 PR。覆盖分支、提交信息、验证及发版边界；规则更新不会自动修改远端保护、CI 或 Git hooks。
 
 ## 按需多智能体
 
