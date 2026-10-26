@@ -117,6 +117,13 @@ reversible CodeGraph adoption path are documented in
 不依赖原工作区路径；只读取任务相关章节，不因普通修改加载全文。
 默认借鉴 ROS 1/2 的组织方法，实际使用 ROS 由项目决定；内核、SDK 与已有项目约定按其作用域适配。
 
+## Git 协作与版本管理
+
+涉及提交、推送、PR、分支流转或版本交付时，按需读取
+[Git/Gitee 协作规则](assets/agents-project-template/references/git-collaboration.md)。
+参考文件随本技能和项目模板安装；采用仓库实际分支模型，复用有效验证，
+区分本地提交、远端推送、合并及发布授权。普通实现不因此启动版本交付流程。
+
 ## Incremental verification
 
 For repeated project checks, use the bundled
